@@ -11,6 +11,10 @@ class IndexView extends View {
     }
     
     public function fetch() {
+            if($this->user->id) {
+              $this->design->assign('test_count',$this->orders->count_orders(array('user_id'=>$this->user->id,'paid'=>1)));
+            }
+            $this->design->assign('test_user_id',$this->user->id);
         /*Принимаем данные с формы заказа обратного звонка*/
         if($this->request->method('post') && $this->request->post('callback')) {
             $callback = new stdClass();
@@ -19,7 +23,6 @@ class IndexView extends View {
             $callback->url          = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
             $callback->message      = $this->request->post('message');
             $captcha_code =  $this->request->post('captcha_code', 'string');
-            
             $this->design->assign('callname',  $callback->name);
             $this->design->assign('callphone', $callback->phone);
             $this->design->assign('callmessage', $callback->message);

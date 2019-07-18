@@ -226,6 +226,7 @@
             </div>
         </div>
     </div>
+{if $test_count}<p align='center'>Выполнено заказов: {$test_count}, user_id={$test_user_id}</p>{/if}
 </header>
 
 {* Тело сайта *}

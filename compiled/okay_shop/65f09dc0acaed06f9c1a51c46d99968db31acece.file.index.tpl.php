@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19-dev, created on 2019-07-18 07:06:28
+<?php /* Smarty version Smarty-3.1.19-dev, created on 2019-07-18 12:16:56
          compiled from "/home/test/sites/test2.test/design/okay_shop/html/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3089867965d301a74dc7701-69248392%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '65f09dc0acaed06f9c1a51c46d99968db31acece' => 
     array (
       0 => '/home/test/sites/test2.test/design/okay_shop/html/index.tpl',
-      1 => 1563433388,
+      1 => 1563452213,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.19-dev',
+  'unifunc' => 'content_5d301a74ee4f84_55698208',
   'variables' => 
   array (
     'language' => 0,
@@ -37,6 +39,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'currency' => 0,
     'c' => 0,
     'keyword' => 0,
+    'test_count' => 0,
+    'test_user_id' => 0,
     'is_mobile' => 0,
     'is_tablet' => 0,
     'banner_group1' => 0,
@@ -50,8 +54,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'admintooltip' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.19-dev',
-  'unifunc' => 'content_5d301a74ee4f84_55698208',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5d301a74ee4f84_55698208')) {function content_5d301a74ee4f84_55698208($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/home/test/sites/test2.test/vendor/smarty/smarty/libs/plugins/modifier.date_format.php';
 ?><!DOCTYPE html>
@@ -355,6 +357,9 @@ all-products">
             </div>
         </div>
     </div>
+<?php if ($_smarty_tpl->tpl_vars['test_count']->value) {?><p align='center'>Выполнено заказов: <?php echo $_smarty_tpl->tpl_vars['test_count']->value;?>
+, user_id=<?php echo $_smarty_tpl->tpl_vars['test_user_id']->value;?>
+</p><?php }?>
 </header>
 
 

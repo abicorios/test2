@@ -119,6 +119,9 @@ class Orders extends Okay {
         if(isset($filter['user_id'])) {
             $where .= $this->db->placehold(' AND o.user_id = ?', intval($filter['user_id']));
         }
+        if(isset($filter['paid'])) {
+            $where .= $this->db->placehold(' AND o.paid = ?', intval($filter['paid']));
+        }
         
         if(isset($filter['modified_since'])) {
             $where .= $this->db->placehold(' AND o.modified > ?', $filter['modified_since']);
