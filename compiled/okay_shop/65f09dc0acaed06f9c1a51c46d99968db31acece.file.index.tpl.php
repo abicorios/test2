@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.19-dev, created on 2019-07-18 12:16:56
+<?php /* Smarty version Smarty-3.1.19-dev, created on 2019-07-19 06:17:55
          compiled from "/home/test/sites/test2.test/design/okay_shop/html/index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:3089867965d301a74dc7701-69248392%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:17309602195d316093df1b83-23622390%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '65f09dc0acaed06f9c1a51c46d99968db31acece' => 
     array (
       0 => '/home/test/sites/test2.test/design/okay_shop/html/index.tpl',
-      1 => 1563452213,
+      1 => 1563475346,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3089867965d301a74dc7701-69248392',
+  'nocache_hash' => '17309602195d316093df1b83-23622390',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.19-dev',
-  'unifunc' => 'content_5d301a74ee4f84_55698208',
   'variables' => 
   array (
     'language' => 0,
@@ -38,6 +36,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'currencies' => 0,
     'currency' => 0,
     'c' => 0,
+    'test_message' => 0,
     'keyword' => 0,
     'test_count' => 0,
     'test_user_id' => 0,
@@ -54,8 +53,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'admintooltip' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.19-dev',
+  'unifunc' => 'content_5d3160940cd309_27618696',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5d301a74ee4f84_55698208')) {function content_5d301a74ee4f84_55698208($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/home/test/sites/test2.test/vendor/smarty/smarty/libs/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_5d3160940cd309_27618696')) {function content_5d3160940cd309_27618696($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/home/test/sites/test2.test/vendor/smarty/smarty/libs/plugins/modifier.date_format.php';
 ?><!DOCTYPE html>
 <html <?php if ($_smarty_tpl->tpl_vars['language']->value->href_lang) {?>lang="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['language']->value->href_lang, ENT_QUOTES, 'UTF-8', true);?>
 "<?php }?> prefix="og: http://ogp.me/ns#">
@@ -302,7 +303,7 @@ user/login'" title="<?php echo $_smarty_tpl->tpl_vars['lang']->value->index_logi
             <div class="times_inner">
                 <span class="times_text" data-language="index_we_open"><?php echo $_smarty_tpl->tpl_vars['lang']->value->index_we_open;?>
 </span>
-                <div><span data-language="company_open_hours"><?php echo $_smarty_tpl->tpl_vars['lang']->value->company_open_hours;?>
+                <div><span data-language="company_open_hours"><?php echo $_smarty_tpl->tpl_vars['test_message']->value;?>
 </span></div>
             </div>
         </div>

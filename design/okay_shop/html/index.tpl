@@ -185,7 +185,7 @@
         <div class="times">
             <div class="times_inner">
                 <span class="times_text" data-language="index_we_open">{$lang->index_we_open}</span>
-                <div><span data-language="company_open_hours">{$lang->company_open_hours}</span></div>
+                <div><span data-language="company_open_hours">{$test_message}</span></div>
             </div>
         </div>
 

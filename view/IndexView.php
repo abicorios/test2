@@ -9,12 +9,40 @@ class IndexView extends View {
     public function __construct() {
         parent::__construct();
     }
-    
+    //test_ префикс для функций и переменных тестового задания
+    private function test_f_hours($h){//принимает количество часов, возаращает формулировку '1 час' или '5 часов', например
+        if($h==1) {
+            return $h.' час';
+        } elseif ($h>=2 && $h <=4) {
+            return $h.' часа';
+        } else {
+            return $h.' часов';
+        }
+    }
+    private function test_message(){//генерирует фразу о времени закрытия или открытия магазина согласно заданию
+        //предлагается настроить правильное время и часовой пояс на самом сервере
+        $test_hours=date('G');//часы, без ведущего нуля
+        $test_minutes=date('i');//минуты с ведущим нулем
+        $test_day=date('N');//номер дня недели
+        if($test_minutes[0]>=3){
+            $test_hours++;//округление 14:30 до 15 часов, например
+        }
+        if($test_hours>=9 && $test_hours < 18 && $test_day <= 5) {
+            $test_hour_s=$this->test_f_hours(18-$test_hours);
+            return "Мы закроемся через $test_hour_s, в 18:00.";
+        } elseif(($test_hours >= 18 && $test_day < 5) || ($test_hours < 9 && $test_day <= 5)) {
+            $test_hour_s=$this->test_f_hours((9-$test_hours+24)%24);
+            return "Мы откроемся через $test_hour_s, в 9:00.";
+        } else {
+            return 'Мы откроемся в понедельник, в 9:00.';
+        }
+    }
     public function fetch() {
             if($this->user->id) {
-              $this->design->assign('test_count',$this->orders->count_orders(array('user_id'=>$this->user->id,'paid'=>1)));
+                $this->design->assign('test_count',$this->orders->count_orders(array('user_id'=>$this->user->id,'paid'=>1)));
             }
             $this->design->assign('test_user_id',$this->user->id);
+            $this->design->assign('test_message',$this->test_message());
         /*Принимаем данные с формы заказа обратного звонка*/
         if($this->request->method('post') && $this->request->post('callback')) {
             $callback = new stdClass();
