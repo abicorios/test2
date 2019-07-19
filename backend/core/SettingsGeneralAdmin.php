@@ -11,6 +11,7 @@ class SettingsGeneralAdmin extends Okay {
             $this->settings->update('site_name', $this->request->post('site_name'));
             $this->settings->date_format = $this->request->post('date_format');
             $this->settings->admin_email = $this->request->post('admin_email');
+            $this->settings->admin_test_min_order_sum = $this->request->post('admin_test_min_order_sum');
             $this->settings->site_work = $this->request->post('site_work');
             $this->settings->update('site_annotation', $this->request->post('site_annotation'));
             $this->settings->captcha_product = $this->request->post('captcha_product', 'boolean');

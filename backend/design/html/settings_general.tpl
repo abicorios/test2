@@ -57,13 +57,19 @@
                                 <input name="date_format" class="form-control" type="text" value="{$settings->date_format|escape}" />
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="heading_label">{$btr->settings_general_email|escape}</div>
                             <div class="mb-1">
                                 <input name="admin_email" class="form-control" type="text" value="{$settings->admin_email|escape}" />
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
+                            <div class="heading_label">Минимальная сумма заказа</div>
+                            <div class="mb-1">
+                                <input name="admin_test_min_order_sum" class="form-control" type="text" value="{$settings->admin_test_min_order_sum|escape}" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
                             <div class="heading_label">{$btr->settings_general_shutdown|escape}</div>
                             <div class="mb-1">
                                 <select name="site_work" class="selectpicker">

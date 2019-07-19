@@ -3,12 +3,33 @@
 {* The page title *}
 {$meta_title = $lang->cart_title scope=parent}
 
+
 {if $cart->purchases}
     {* Cart form *}
     <form id="captcha_id" method="post" name="cart" class="fn_validate_cart">
         {* The page heading *}
         <h1 class="h2"><span data-language="cart_header">{$lang->cart_header}</span></h1>
-
+<p class="h2" id='test_msg' hidden></p>
+<script>
+function test_f(){
+  var t_total=$('#test_total').text();
+  var t_min=$('#test_min').text();
+  var t_txt=$('#test_txt').text();
+  if(Number(t_total)<Number(t_min)){
+    $('#test_msg').text(t_txt).show();
+    $('#test_id_button').prop('disabled',true);
+  } else {
+    $('#test_msg').hide();
+    $('#test_id_button').prop('disabled',false);
+  }
+}
+document.onclick = function(){
+test_f();
+}
+$(document).ready(function(){
+test_f();
+});
+</script>
         {* The list of products in the cart *}
         <div id="fn_purchases">
             {include file='cart_purchases.tpl'}
@@ -107,7 +128,7 @@
             {/if}
             <input type="hidden" name="checkout" value="1">
             {* Submit button *}
-            <input class="button g-recaptcha" type="submit" name="checkout" data-language="cart_checkout" {if $settings->captcha_type == "invisible"}data-sitekey="{$settings->public_recaptcha_invisible}" data-badge='bottomleft' data-callback="onSubmit"{/if} value="{$lang->cart_checkout}">
+            <input class="button g-recaptcha" type="submit" name="checkout" data-language="cart_checkout" id='test_id_button' {if $settings->captcha_type == "invisible"}data-sitekey="{$settings->public_recaptcha_invisible}" data-badge='bottomleft' data-callback="onSubmit"{/if} value="{$lang->cart_checkout}">
         </div>    
     </form>
 
