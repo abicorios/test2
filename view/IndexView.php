@@ -39,7 +39,7 @@ class IndexView extends View {
     }
     public function fetch() {
             if($this->user->id) {
-                $this->design->assign('test_count',$this->orders->count_orders(array('user_id'=>$this->user->id,'paid'=>1)));
+                $this->design->assign('test_count',$this->orders->count_orders(array('user_id'=>$this->user->id,'paid'=>1,'closed'=>1)));
             }
             $this->design->assign('test_user_id',$this->user->id);
             $this->design->assign('test_message',$this->test_message());

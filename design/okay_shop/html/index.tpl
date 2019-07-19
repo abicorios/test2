@@ -224,9 +224,9 @@
 
                 {include file="categories.tpl"}
             </div>
+          {if $test_count}<p align='center'><font color='white' size='+1'><b>Выполнено заказов: {$test_count}, user_id={$test_user_id}</b></font></p>{/if}
         </div>
     </div>
-{if $test_count}<p align='center'>Выполнено заказов: {$test_count}, user_id={$test_user_id}</p>{/if}
 </header>
 
 {* Тело сайта *}

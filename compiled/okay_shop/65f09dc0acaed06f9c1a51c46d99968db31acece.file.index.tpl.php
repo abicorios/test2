@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19-dev, created on 2019-07-19 06:17:55
+<?php /* Smarty version Smarty-3.1.19-dev, created on 2019-07-19 13:04:30
          compiled from "/home/test/sites/test2.test/design/okay_shop/html/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:17309602195d316093df1b83-23622390%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '65f09dc0acaed06f9c1a51c46d99968db31acece' => 
     array (
       0 => '/home/test/sites/test2.test/design/okay_shop/html/index.tpl',
-      1 => 1563475346,
+      1 => 1563541460,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.19-dev',
+  'unifunc' => 'content_5d3160940cd309_27618696',
   'variables' => 
   array (
     'language' => 0,
@@ -53,8 +55,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'admintooltip' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.19-dev',
-  'unifunc' => 'content_5d3160940cd309_27618696',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5d3160940cd309_27618696')) {function content_5d3160940cd309_27618696($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/home/test/sites/test2.test/vendor/smarty/smarty/libs/plugins/modifier.date_format.php';
 ?><!DOCTYPE html>
@@ -356,11 +356,11 @@ all-products">
                 <?php echo $_smarty_tpl->getSubTemplate ("categories.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
             </div>
+          <?php if ($_smarty_tpl->tpl_vars['test_count']->value) {?><p align='center'><font color='white' size='+1'><b>Выполнено заказов: <?php echo $_smarty_tpl->tpl_vars['test_count']->value;?>
+, user_id=<?php echo $_smarty_tpl->tpl_vars['test_user_id']->value;?>
+</b></font></p><?php }?>
         </div>
     </div>
-<?php if ($_smarty_tpl->tpl_vars['test_count']->value) {?><p align='center'>Выполнено заказов: <?php echo $_smarty_tpl->tpl_vars['test_count']->value;?>
-, user_id=<?php echo $_smarty_tpl->tpl_vars['test_user_id']->value;?>
-</p><?php }?>
 </header>
 
 
